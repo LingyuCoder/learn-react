@@ -5,7 +5,9 @@ var CommentBox = React.createClass({
     return {data: []};
   },
   handleCommentSubmit: function(comment){
-    console.log(comment);
+    var comments = this.state.data;
+    var newComments = comments.concat([comment]);
+    this.setState({data:newComments});
   },
   loadCommentsFormServer: function(){
     $.ajax({
