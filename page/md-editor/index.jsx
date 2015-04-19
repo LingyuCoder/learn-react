@@ -13,13 +13,11 @@ var Ace = React.createClass({
             self.props.onScroll(scrollTop / maxScrollTop);
         });
         session.setUseWrapMode(true);
-
         editor.renderer.on('afterRender', function(){
             var renderer = editor.renderer;
             maxScrollTop = Math.max(0, renderer.layerConfig.maxHeight - renderer.$size.scrollerHeight + renderer.scrollMargin.bottom);
         });
         editor.container.style.fontSize = '16px';
-
         editor.setValue(self.props.content);
     },
     render: function(){
