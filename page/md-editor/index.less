@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.markdown { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .editor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 50%;
+      .ace {
+        height: 100%;
+        .ace_layer {/*用于修正ace中文换行时可能出现的叠字情况*/
+          white-space: nowrap !important;
+        }
+      }
+    }
+    .result {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      right: 0;
+      overflow: auto;
+      padding: 20px;
+    }
+}    
+
+
+
+
+
+
+
