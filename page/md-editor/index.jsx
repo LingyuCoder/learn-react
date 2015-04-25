@@ -54,7 +54,7 @@ var MdEditor = React.createClass({
             hljs.highlightBlock(block);
         });
         return (
-            <div className="markdown">
+            <div className="react-markdown">
                 <div className="editor">
                     <Ace onChange={this.changeContent} onScroll={this.scrollResult} content={this.state.content}>
                     </Ace>

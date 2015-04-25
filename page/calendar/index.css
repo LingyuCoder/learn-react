@@ -1,0 +1,157 @@
+.text-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.column {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.s1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.s2 {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+.s3 {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+.s4 {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+.s5 {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+.s6 {
+  -webkit-box-flex: 6;
+  -webkit-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+.s7 {
+  -webkit-box-flex: 7;
+  -webkit-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+}
+.s8 {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+}
+.s9 {
+  -webkit-box-flex: 9;
+  -webkit-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+}
+.s10 {
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+}
+.s11 {
+  -webkit-box-flex: 11;
+  -webkit-flex: 11;
+      -ms-flex: 11;
+          flex: 11;
+}
+.s12 {
+  -webkit-box-flex: 12;
+  -webkit-flex: 12;
+      -ms-flex: 12;
+          flex: 12;
+}
+.center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+.react-calendar {
+  width: 100%;
+  height: 100%;
+}
+.react-calendar .header {
+  background: #16a085;
+  color: #fff;
+  font-size: 30px;
+}
+.react-calendar .calendar .day {
+  color: #999;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+}
+.react-calendar .calendar .day.weekend {
+  background: #f0f0f0;
+}
+.react-calendar .calendar .day.cur {
+  background: #16a085;
+  color: #fff;
+}
+.react-calendar .calendar .day.cur .lunar {
+  color: #ddd;
+}
+.react-calendar .calendar .day .lunar {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}

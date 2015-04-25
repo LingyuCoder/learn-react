@@ -163,7 +163,7 @@ var Calculator = React.createClass({
             last: this.state.last
         };
         return (
-            <div className="calculator">
+            <div className="react-calculator">
                 <ResultPanel exp={exp}/>
                 <ButtonPanel onClick={this.onButtonClick}/>
             </div>
