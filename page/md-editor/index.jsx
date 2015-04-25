@@ -60,7 +60,7 @@ var MdEditor = React.createClass({
                     </Ace>
                 </div>
                 <div className="result yue" dangerouslySetInnerHTML={{__html: $result.html()}}></div>
-            </div>    
+            </div>
         );
     }
 });
