@@ -5,3 +5,5 @@
 -	[markdown编辑器](http://lingyucoder.github.io/learn-react/page/md-editor/index.html)
 -	[计算器](http://lingyucoder.github.io/learn-react/page/calculator/index.html)
 -	[日历](http://lingyucoder.github.io/learn-react/page/calendar/index.html)
+- [单选框和复选框](http://lingyucoder.github.io/learn-react/page/checkbox/index.html)
+- [标签输入框](http://lingyucoder.github.io/learn-react/page/tagfield/index.html)
