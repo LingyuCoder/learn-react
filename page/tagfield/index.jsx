@@ -14,6 +14,7 @@ var AsTagField = React.createClass({
 		});
 	},
 	createTag: function(value) {
+		if(!value.trim()) return;
 		var tags = this.state.tags;
 		if(tags.indexOf(value) !== -1) return;
 		tags.push(value);
