@@ -49,7 +49,7 @@ var ButtonPanel = React.createClass({
                 event.stopPropagation();
                 event.preventDefault();
             }
-        }
+        };
     },
     render: function() {
         return (
