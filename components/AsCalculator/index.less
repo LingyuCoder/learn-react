@@ -1,0 +1,90 @@
+.as-calculator {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .result-panel {
+        display: flex;
+        padding-top: 40px;
+        flex: 2;
+        flex-direction: column;
+        background-color: #e3e7e9;
+        text-align: right;
+        padding: 0px 30px;
+        line-height: 80px;
+
+        .last-row {
+            flex: 1;
+            color: #969ba3;
+            font-size: 30px;
+            align-items: flex-end;
+            display: flex;
+            justify-content: flex-end;
+            overflow: auto;
+            max-width: 100%;
+        }
+        .cur-row {
+            flex: 1;
+            color: #46494d;
+            font-size: 40px;
+            overflow: auto;
+            max-width: 100%;
+        }
+    }
+
+    .button-panel{
+        flex: 5;
+
+        .button {
+            cursor: pointer;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            box-shadow: inset 1px 1px 0 0 #e3e7e9;
+            border: none;
+            background-color: #fafafa;
+            font-size: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #979ca4;
+            overflow: hidden;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #aaa;
+                opacity: 0;
+            }
+            &.clicked:before {
+                animation: as-calculator-click .5s ease-out 0s 1 alternate forwards;
+            }
+            &.button-equal {
+                color: #fff;
+                background-color: #fa722e;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+
+    }
+}
+
+@keyframes as-calculator-click {
+    0% {
+        transform: scale(1);
+        opacity: .7;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
