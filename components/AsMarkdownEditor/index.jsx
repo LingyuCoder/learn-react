@@ -1,33 +1,33 @@
 var React = require('react');
+var BaseComponent = require('../BaseComponent.jsx');
 
 require('./index.less');
 
 var Ace = require('./Ace.jsx');
 
-var MdEditor = React.createClass({
-    storage: window.localStorage,
-    getInitialState: function(){
-        var self = this;
-        return {
-            content: self.storage.lastEdit || ''
+class MdEditor extends BaseComponent {
+    constructor() {
+        super();
+        this.storage = window.localStorage;
+        this.state = {
+            content: this.storage.lastEdit || ''
         };
-    },
-    changeContent: function(content){
-        var self = this;
-        self.setState({
+        this._bind('changeContent', 'scrollResult', 'render');
+    }
+    changeContent(content) {
+        this.setState({
             content: content
         });
-        self.storage.lastEdit = content;
-    },
-    scrollResult: function(percent){
-        var self = this;
-        var $result = $('.result', self.getDOMNode());
+        this.storage.lastEdit = content;
+    }
+    scrollResult(percent) {
+        var $result = $('.result', this.getDOMNode());
         var maxScrollHeight = $result.prop('scrollHeight') - $result.outerHeight();
         $result.scrollTop(maxScrollHeight * percent);
-    },
-    render: function() {
+    }
+    render() {
         var $result = $('<div>' + marked(this.state.content) + '</div>');
-        $('pre code', $result).each(function(i, block) {
+        $('pre code', $result).each((i, block) => {
             hljs.highlightBlock(block);
         });
         return (
@@ -40,6 +40,6 @@ var MdEditor = React.createClass({
             </div>
         );
     }
-});
+}
 
 module.exports = MdEditor;

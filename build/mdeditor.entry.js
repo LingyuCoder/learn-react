@@ -22,41 +22,65 @@ webpackJsonp([4,6],[
 
 	'use strict';
 
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { desc = parent = getter = undefined; _again = false; var object = _x,
+	    property = _x2,
+	    receiver = _x3; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
 	var React = __webpack_require__(8);
+	var BaseComponent = __webpack_require__(9);
 
 	__webpack_require__(29);
 
 	var Ace = __webpack_require__(15);
 
-	var MdEditor = React.createClass({ displayName: 'MdEditor',
-	    storage: window.localStorage,
-	    getInitialState: function getInitialState() {
-	        var self = this;
-	        return {
-	            content: self.storage.lastEdit || ''
+	var MdEditor = (function (_BaseComponent) {
+	    function MdEditor() {
+	        _classCallCheck(this, MdEditor);
+
+	        _get(Object.getPrototypeOf(MdEditor.prototype), 'constructor', this).call(this);
+	        this.storage = window.localStorage;
+	        this.state = {
+	            content: this.storage.lastEdit || ''
 	        };
-	    },
-	    changeContent: function changeContent(content) {
-	        var self = this;
-	        self.setState({
-	            content: content
-	        });
-	        self.storage.lastEdit = content;
-	    },
-	    scrollResult: function scrollResult(percent) {
-	        var self = this;
-	        var $result = $('.result', self.getDOMNode());
-	        var maxScrollHeight = $result.prop('scrollHeight') - $result.outerHeight();
-	        $result.scrollTop(maxScrollHeight * percent);
-	    },
-	    render: function render() {
-	        var $result = $('<div>' + marked(this.state.content) + '</div>');
-	        $('pre code', $result).each(function (i, block) {
-	            hljs.highlightBlock(block);
-	        });
-	        return React.createElement('div', { className: 'as-md-editor' }, React.createElement('div', { className: 'editor' }, React.createElement(Ace, { onChange: this.changeContent, onScroll: this.scrollResult, content: this.state.content })), React.createElement('div', { className: 'result yue', dangerouslySetInnerHTML: { __html: $result.html() } }));
+	        this._bind('changeContent', 'scrollResult', 'render');
 	    }
-	});
+
+	    _inherits(MdEditor, _BaseComponent);
+
+	    _createClass(MdEditor, [{
+	        key: 'changeContent',
+	        value: function changeContent(content) {
+	            this.setState({
+	                content: content
+	            });
+	            this.storage.lastEdit = content;
+	        }
+	    }, {
+	        key: 'scrollResult',
+	        value: function scrollResult(percent) {
+	            var $result = $('.result', this.getDOMNode());
+	            var maxScrollHeight = $result.prop('scrollHeight') - $result.outerHeight();
+	            $result.scrollTop(maxScrollHeight * percent);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var $result = $('<div>' + marked(this.state.content) + '</div>');
+	            $('pre code', $result).each(function (i, block) {
+	                hljs.highlightBlock(block);
+	            });
+	            return React.createElement('div', { className: 'as-md-editor' }, React.createElement('div', { className: 'editor' }, React.createElement(Ace, { onChange: this.changeContent, onScroll: this.scrollResult, content: this.state.content })), React.createElement('div', { className: 'result yue', dangerouslySetInnerHTML: { __html: $result.html() } }));
+	        }
+	    }]);
+
+	    return MdEditor;
+	})(BaseComponent);
 
 	module.exports = MdEditor;
 
@@ -69,7 +93,51 @@ webpackJsonp([4,6],[
 	module.exports = __webpack_require__(16);
 
 /***/ },
-/* 9 */,
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(8);
+
+	var BaseComponent = (function (_React$Component) {
+		function BaseComponent() {
+			_classCallCheck(this, BaseComponent);
+
+			if (_React$Component != null) {
+				_React$Component.apply(this, arguments);
+			}
+		}
+
+		_inherits(BaseComponent, _React$Component);
+
+		_createClass(BaseComponent, [{
+			key: '_bind',
+			value: function _bind() {
+				var _this = this;
+
+				for (var _len = arguments.length, methods = Array(_len), _key = 0; _key < _len; _key++) {
+					methods[_key] = arguments[_key];
+				}
+
+				methods.forEach(function (method) {
+					return _this[method] = _this[method].bind(_this);
+				});
+			}
+		}]);
+
+		return BaseComponent;
+	})(React.Component);
+
+	module.exports = BaseComponent;
+
+/***/ },
 /* 10 */,
 /* 11 */,
 /* 12 */,
@@ -80,34 +148,62 @@ webpackJsonp([4,6],[
 
 	'use strict';
 
-	var React = __webpack_require__(8);
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var Ace = React.createClass({ displayName: 'Ace',
-	    componentDidMount: function componentDidMount() {
-	        var self = this;
-	        var editor = ace.edit(self.getDOMNode());
-	        var maxScrollTop = 0;
-	        editor.setTheme('ace/theme/tomorrow');
-	        var session = editor.getSession();
-	        session.setMode('ace/mode/markdown');
-	        session.on('change', function () {
-	            self.props.onChange(editor.getValue());
-	        });
-	        session.on('changeScrollTop', function (scrollTop) {
-	            self.props.onScroll(scrollTop / maxScrollTop);
-	        });
-	        session.setUseWrapMode(true);
-	        editor.renderer.on('afterRender', function () {
-	            var renderer = editor.renderer;
-	            maxScrollTop = Math.max(0, renderer.layerConfig.maxHeight - renderer.$size.scrollerHeight + renderer.scrollMargin.bottom);
-	        });
-	        editor.container.style.fontSize = '16px';
-	        editor.setValue(self.props.content);
-	    },
-	    render: function render() {
-	        return React.createElement('div', { className: 'ace' });
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { desc = parent = getter = undefined; _again = false; var object = _x,
+	    property = _x2,
+	    receiver = _x3; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(8);
+	var BaseComponent = __webpack_require__(9);
+
+	var Ace = (function (_BaseComponent) {
+	    function Ace() {
+	        _classCallCheck(this, Ace);
+
+	        _get(Object.getPrototypeOf(Ace.prototype), 'constructor', this).call(this);
+	        this._bind('componentDidMount', 'render');
 	    }
-	});
+
+	    _inherits(Ace, _BaseComponent);
+
+	    _createClass(Ace, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var _this2 = this;
+
+	            var editor = ace.edit(this.getDOMNode());
+	            var maxScrollTop = 0;
+	            editor.setTheme('ace/theme/tomorrow');
+	            var session = editor.getSession();
+	            session.setMode('ace/mode/markdown');
+	            session.on('change', function () {
+	                _this2.props.onChange(editor.getValue());
+	            });
+	            session.on('changeScrollTop', function (scrollTop) {
+	                _this2.props.onScroll(scrollTop / maxScrollTop);
+	            });
+	            session.setUseWrapMode(true);
+	            editor.renderer.on('afterRender', function () {
+	                var renderer = editor.renderer;
+	                maxScrollTop = Math.max(0, renderer.layerConfig.maxHeight - renderer.$size.scrollerHeight + renderer.scrollMargin.bottom);
+	            });
+	            editor.container.style.fontSize = '16px';
+	            editor.setValue(this.props.content);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return React.createElement('div', { className: 'ace' });
+	        }
+	    }]);
+
+	    return Ace;
+	})(BaseComponent);
 
 	module.exports = Ace;
 
@@ -1063,17 +1159,17 @@ webpackJsonp([4,6],[
 	var ReactComponent = __webpack_require__(35);
 	var ReactCurrentOwner = __webpack_require__(38);
 	var ReactElement = __webpack_require__(39);
-	var ReactErrorUtils = __webpack_require__(62);
-	var ReactInstanceMap = __webpack_require__(63);
-	var ReactLifeCycle = __webpack_require__(64);
-	var ReactPropTypeLocations = __webpack_require__(65);
-	var ReactPropTypeLocationNames = __webpack_require__(66);
+	var ReactErrorUtils = __webpack_require__(63);
+	var ReactInstanceMap = __webpack_require__(64);
+	var ReactLifeCycle = __webpack_require__(65);
+	var ReactPropTypeLocations = __webpack_require__(66);
+	var ReactPropTypeLocationNames = __webpack_require__(67);
 	var ReactUpdateQueue = __webpack_require__(61);
 
 	var assign = __webpack_require__(50);
 	var invariant = __webpack_require__(56);
-	var keyMirror = __webpack_require__(67);
-	var keyOf = __webpack_require__(68);
+	var keyMirror = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 	var warning = __webpack_require__(60);
 
 	var MIXINS_KEY = keyOf({ mixins: null });
@@ -1850,7 +1946,7 @@ webpackJsonp([4,6],[
 	"use strict";
 
 	var assign = __webpack_require__(50);
-	var emptyObject = __webpack_require__(69);
+	var emptyObject = __webpack_require__(62);
 	var warning = __webpack_require__(60);
 
 	var didWarn = false;
@@ -2252,8 +2348,8 @@ webpackJsonp([4,6],[
 
 	var ReactElement = __webpack_require__(39);
 	var ReactFragment = __webpack_require__(58);
-	var ReactPropTypeLocations = __webpack_require__(65);
-	var ReactPropTypeLocationNames = __webpack_require__(66);
+	var ReactPropTypeLocations = __webpack_require__(66);
+	var ReactPropTypeLocationNames = __webpack_require__(67);
 	var ReactCurrentOwner = __webpack_require__(38);
 	var ReactNativeComponent = __webpack_require__(70);
 
@@ -3381,14 +3477,14 @@ webpackJsonp([4,6],[
 	var ReactElementValidator = __webpack_require__(40);
 	var ReactEmptyComponent = __webpack_require__(107);
 	var ReactInstanceHandles = __webpack_require__(44);
-	var ReactInstanceMap = __webpack_require__(63);
+	var ReactInstanceMap = __webpack_require__(64);
 	var ReactMarkupChecksum = __webpack_require__(108);
 	var ReactPerf = __webpack_require__(46);
 	var ReactReconciler = __webpack_require__(48);
 	var ReactUpdateQueue = __webpack_require__(61);
 	var ReactUpdates = __webpack_require__(109);
 
-	var emptyObject = __webpack_require__(69);
+	var emptyObject = __webpack_require__(62);
 	var containsNode = __webpack_require__(110);
 	var getReactRootElementInContainer = __webpack_require__(111);
 	var instantiateReactComponent = __webpack_require__(112);
@@ -4203,7 +4299,7 @@ webpackJsonp([4,6],[
 
 	var ReactElement = __webpack_require__(39);
 	var ReactFragment = __webpack_require__(58);
-	var ReactPropTypeLocationNames = __webpack_require__(66);
+	var ReactPropTypeLocationNames = __webpack_require__(67);
 
 	var emptyFunction = __webpack_require__(115);
 
@@ -4644,7 +4740,7 @@ webpackJsonp([4,6],[
 	var ReactMarkupChecksum = __webpack_require__(108);
 	var ReactServerRenderingTransaction = __webpack_require__(117);
 
-	var emptyObject = __webpack_require__(69);
+	var emptyObject = __webpack_require__(62);
 	var instantiateReactComponent = __webpack_require__(112);
 	var invariant = __webpack_require__(56);
 
@@ -4769,7 +4865,7 @@ webpackJsonp([4,6],[
 	"use strict";
 
 	var ReactCurrentOwner = __webpack_require__(38);
-	var ReactInstanceMap = __webpack_require__(63);
+	var ReactInstanceMap = __webpack_require__(64);
 	var ReactMount = __webpack_require__(45);
 
 	var invariant = __webpack_require__(56);
@@ -4974,7 +5070,7 @@ webpackJsonp([4,6],[
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(67);
+	var keyMirror = __webpack_require__(68);
 
 	var PropagationPhases = keyMirror({ bubbled: null, captured: null });
 
@@ -5629,10 +5725,10 @@ webpackJsonp([4,6],[
 
 	"use strict";
 
-	var ReactLifeCycle = __webpack_require__(64);
+	var ReactLifeCycle = __webpack_require__(65);
 	var ReactCurrentOwner = __webpack_require__(38);
 	var ReactElement = __webpack_require__(39);
-	var ReactInstanceMap = __webpack_require__(63);
+	var ReactInstanceMap = __webpack_require__(64);
 	var ReactUpdates = __webpack_require__(109);
 
 	var assign = __webpack_require__(50);
@@ -5854,6 +5950,32 @@ webpackJsonp([4,6],[
 /* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule emptyObject
+	 */
+
+	"use strict";
+
+	var emptyObject = {};
+
+	if ("production" !== process.env.NODE_ENV) {
+	  Object.freeze(emptyObject);
+	}
+
+	module.exports = emptyObject;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
@@ -5886,7 +6008,7 @@ webpackJsonp([4,6],[
 	module.exports = ReactErrorUtils;
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -5938,7 +6060,7 @@ webpackJsonp([4,6],[
 	module.exports = ReactInstanceMap;
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -5978,7 +6100,7 @@ webpackJsonp([4,6],[
 	module.exports = ReactLifeCycle;
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -5994,7 +6116,7 @@ webpackJsonp([4,6],[
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(67);
+	var keyMirror = __webpack_require__(68);
 
 	var ReactPropTypeLocations = keyMirror({
 	  prop: null,
@@ -6005,7 +6127,7 @@ webpackJsonp([4,6],[
 	module.exports = ReactPropTypeLocations;
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -6035,7 +6157,7 @@ webpackJsonp([4,6],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -6089,7 +6211,7 @@ webpackJsonp([4,6],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -6127,32 +6249,6 @@ webpackJsonp([4,6],[
 	};
 
 	module.exports = keyOf;
-
-/***/ },
-/* 69 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule emptyObject
-	 */
-
-	"use strict";
-
-	var emptyObject = {};
-
-	if ("production" !== process.env.NODE_ENV) {
-	  Object.freeze(emptyObject);
-	}
-
-	module.exports = emptyObject;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(54)))
 
 /***/ },
 /* 70 */
@@ -6608,7 +6704,7 @@ webpackJsonp([4,6],[
 	var escapeTextContentForBrowser = __webpack_require__(76);
 	var invariant = __webpack_require__(56);
 	var isEventSupported = __webpack_require__(122);
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 	var warning = __webpack_require__(60);
 
 	var deleteListener = ReactBrowserEventEmitter.deleteListener;
@@ -7076,7 +7172,7 @@ webpackJsonp([4,6],[
 	var SyntheticCompositionEvent = __webpack_require__(125);
 	var SyntheticInputEvent = __webpack_require__(126);
 
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 
 	var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 	var START_KEYCODE = 229;
@@ -7487,7 +7583,7 @@ webpackJsonp([4,6],[
 
 	var isEventSupported = __webpack_require__(122);
 	var isTextInputElement = __webpack_require__(129);
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -7827,7 +7923,7 @@ webpackJsonp([4,6],[
 
 	"use strict";
 
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 
 	/**
 	 * Module that is injectable into `EventPluginHub`, that specifies a
@@ -7865,7 +7961,7 @@ webpackJsonp([4,6],[
 	var SyntheticMouseEvent = __webpack_require__(130);
 
 	var ReactMount = __webpack_require__(45);
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 	var getFirstReactDOM = ReactMount.getFirstReactDOM;
@@ -8350,7 +8446,7 @@ webpackJsonp([4,6],[
 	var ReactClass = __webpack_require__(36);
 	var ReactElement = __webpack_require__(39);
 
-	var keyMirror = __webpack_require__(67);
+	var keyMirror = __webpack_require__(68);
 
 	var button = ReactElement.createFactory("button");
 
@@ -9629,7 +9725,7 @@ webpackJsonp([4,6],[
 
 	var getActiveElement = __webpack_require__(143);
 	var isTextInputElement = __webpack_require__(129);
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 	var shallowEqual = __webpack_require__(144);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -9850,7 +9946,7 @@ webpackJsonp([4,6],[
 	var getEventCharCode = __webpack_require__(152);
 
 	var invariant = __webpack_require__(56);
-	var keyOf = __webpack_require__(68);
+	var keyOf = __webpack_require__(69);
 	var warning = __webpack_require__(60);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
@@ -11230,7 +11326,7 @@ webpackJsonp([4,6],[
 	"use strict";
 
 	var ReactElement = __webpack_require__(39);
-	var ReactInstanceMap = __webpack_require__(63);
+	var ReactInstanceMap = __webpack_require__(64);
 
 	var invariant = __webpack_require__(56);
 
@@ -15957,17 +16053,17 @@ webpackJsonp([4,6],[
 	var ReactCurrentOwner = __webpack_require__(38);
 	var ReactElement = __webpack_require__(39);
 	var ReactElementValidator = __webpack_require__(40);
-	var ReactInstanceMap = __webpack_require__(63);
-	var ReactLifeCycle = __webpack_require__(64);
+	var ReactInstanceMap = __webpack_require__(64);
+	var ReactLifeCycle = __webpack_require__(65);
 	var ReactNativeComponent = __webpack_require__(70);
 	var ReactPerf = __webpack_require__(46);
-	var ReactPropTypeLocations = __webpack_require__(65);
-	var ReactPropTypeLocationNames = __webpack_require__(66);
+	var ReactPropTypeLocations = __webpack_require__(66);
+	var ReactPropTypeLocationNames = __webpack_require__(67);
 	var ReactReconciler = __webpack_require__(48);
 	var ReactUpdates = __webpack_require__(109);
 
 	var assign = __webpack_require__(50);
-	var emptyObject = __webpack_require__(69);
+	var emptyObject = __webpack_require__(62);
 	var invariant = __webpack_require__(56);
 	var shouldUpdateReactComponent = __webpack_require__(114);
 	var warning = __webpack_require__(60);
@@ -17078,7 +17174,7 @@ webpackJsonp([4,6],[
 
 	"use strict";
 
-	var keyMirror = __webpack_require__(67);
+	var keyMirror = __webpack_require__(68);
 
 	/**
 	 * When a component's children are updated, a series of update configuration
