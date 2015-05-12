@@ -1,4 +1,5 @@
 var React = require('react');
+var BaseComponent = require('../BaseComponent.jsx');
 
 require('./flex.less');
 require('./index.less');
@@ -6,14 +7,16 @@ require('./index.less');
 var CalculatorResultPanel = require('./CalculatorResultPanel.jsx');
 var CalculatorButtonPanel = require('./CalculatorButtonPanel.jsx');
 
-var Calculator = React.createClass({
-    getInitialState: function(){
-        return {
+class Calculator extends BaseComponent {
+    constructor() {
+        super();
+        this._bind('onButtonClick', 'render');
+        this.state = {
             last: '',
             cur: '0'
         };
-    },
-    onButtonClick: function(type){
+    }
+    onButtonClick(type) {
         var cur;
         var lastLetter;
         switch (type) {
@@ -71,8 +74,8 @@ var Calculator = React.createClass({
                 });
                 break;
         }
-    },
-    render: function() {
+    }
+    render() {
         var exp = {
             cur: this.state.cur,
             last: this.state.last
@@ -84,6 +87,6 @@ var Calculator = React.createClass({
             </div>
         );
     }
-});
+}
 
 module.exports = Calculator;

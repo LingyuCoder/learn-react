@@ -1,35 +1,39 @@
 var React = require('react');
+var BaseComponent = require('../BaseComponent.jsx');
 
-var ButtonPanel = React.createClass({
-    keyMapping: {},
-    onClick: function(event) {
+class ButtonPanel extends BaseComponent {
+    constructor() {
+        super();
+        this.keyMapping = {};
+        this._bind('onClick', 'componentDidMount', 'render');
+    }
+    onClick(event) {
         var target = event.target;
         target.classList.remove('clicked');
-        setTimeout(function(){
+        setTimeout(() => {
             target.classList.add('clicked');
         }, 0);
         this.props.onClick(target.dataset.value);
-    },
-    componentDidMount: function() {
-        self = this;
-        var dom = self.getDOMNode();
+    }
+    componentDidMount() {
+        var dom = React.findDOMNode(this);
         var buttons = dom.querySelectorAll('button');
-        buttons = Array.prototype.slice.call(buttons);
-        buttons.forEach(function(button) {
-            self.keyMapping[button.dataset.code] = button;
+        buttons = [].slice.call(buttons);
+        buttons.forEach((button) => {
+            this.keyMapping[button.dataset.code] = button;
         });
 
-        window.onkeydown = function(event) {
+        window.onkeydown = (event) => {
             var button;
             var key = (event.shiftKey ? 'shift+': '') + event.keyCode || event.which;
-            if(button = self.keyMapping[key]) {
+            if(button = this.keyMapping[key]) {
                 button.click();
                 event.stopPropagation();
                 event.preventDefault();
             }
         };
-    },
-    render: function() {
+    }
+    render() {
         return (
             <div className="button-panel row">
                 <div className="s3 column">
@@ -67,6 +71,6 @@ var ButtonPanel = React.createClass({
             </div>
         );
     }
-});
+}
 
 module.exports = ButtonPanel;

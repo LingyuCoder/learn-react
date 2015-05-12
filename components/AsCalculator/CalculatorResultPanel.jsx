@@ -1,17 +1,23 @@
 var React = require('react');
+var BaseComponent = require('../BaseComponent.jsx');
+var replacement = [{
+    reg: /\*/g,
+    dest: '×'
+},{
+    reg: /\//g,
+    dest: '÷'
+}];
 
-var ResultPanel = React.createClass({
-    replacement: [{
-        reg: /\*/g,
-        dest: '×'
-    },{
-        reg: /\//g,
-        dest: '÷'
-    }],
-    render: function() {
+
+class ResultPanel extends BaseComponent {
+    constructor() {
+        super();
+        this._bind('render');
+    }
+    render() {
         var exp = this.props.exp;
         var cur, last;
-        this.replacement.forEach(function(item) {
+        replacement.forEach((item) => {
             exp.cur = exp.cur.replace(item.reg, item.dest);
             exp.last = exp.last.replace(item.reg, item.dest);
         });
@@ -22,6 +28,6 @@ var ResultPanel = React.createClass({
             </div>
         );
     }
-});
+}
 
 module.exports = ResultPanel;

@@ -4,6 +4,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
     entry: {
+        main: ['webpack/hot/dev-server'],
         calculator: './entry/calculator.jsx',
         tagfield: './entry/tagfield.jsx',
         calendar: './entry/calendar.jsx',

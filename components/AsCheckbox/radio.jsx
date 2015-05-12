@@ -1,9 +1,14 @@
 var React = require('react');
+var BaseComponent = require('../BaseComponent.jsx');
 
 require('./index.less');
 
-var AsRadio = React.createClass({
-  render: function() {
+class AsRadio extends BaseComponent {
+  constructor(){
+    super();
+    this._bind('render');
+  }
+  render() {
     var $input;
     if(this.props.checked)
       $input = <input type="radio" className="as-option-input as-radio" name={this.props.name} defaultChecked/>
@@ -16,6 +21,6 @@ var AsRadio = React.createClass({
       </label>
     );
   }
-});
+}
 
 module.exports = AsRadio;

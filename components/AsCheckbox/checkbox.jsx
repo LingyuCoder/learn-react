@@ -1,9 +1,14 @@
 var React = require('react');
+var BaseComponent = require('../BaseComponent.jsx');
 
 require('./index.less');
 
-var AsCheckbox = React.createClass({
-  render: function() {
+class AsCheckbox extends BaseComponent {
+  constructor(){
+    super();
+    this._bind('render');
+  }
+  render() {
     var $input;
     if(this.props.checked)
       $input = <input type="checkbox" className="as-option-input as-checkbox" defaultChecked/>;
@@ -16,7 +21,7 @@ var AsCheckbox = React.createClass({
       </label>
     );
   }
-});
+}
 
 module.exports = AsCheckbox;
 
