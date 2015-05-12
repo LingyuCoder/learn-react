@@ -7,7 +7,7 @@ class Ace extends BaseComponent {
         this._bind('componentDidMount', 'render');
     }
     componentDidMount() {
-        var editor = ace.edit(this.getDOMNode());
+        var editor = ace.edit(React.findDOMNode(this));
         var maxScrollTop = 0;
         editor.setTheme('ace/theme/tomorrow');
         var session = editor.getSession();
