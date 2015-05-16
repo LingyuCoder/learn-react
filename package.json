@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,9 @@
     "less": "^2.5.0",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.0",
+    "react-hot-loader": "^1.2.7",
     "style-loader": "^0.12.2",
-    "webpack": "^1.9.2"
+    "webpack": "^1.9.2",
+    "webpack-dev-server": "^1.8.2"
   }
 }

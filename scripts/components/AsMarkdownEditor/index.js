@@ -1,9 +1,9 @@
 var React = require('react');
-var BaseComponent = require('../BaseComponent.jsx');
+var BaseComponent = require('../BaseComponent');
 
 require('./index.less');
 
-var Ace = require('./Ace.jsx');
+var Ace = require('./Ace');
 
 class MdEditor extends BaseComponent {
     constructor() {

@@ -3,9 +3,9 @@ var React = require('react');
 require('./index.less');
 require('./flex.less');
 
-var CalendarHeader = require('./CalendarHeader.jsx');
-var CalendarHead = require('./CalendarHead.jsx');
-var CalendarBody = require('./CalendarBody.jsx');
+var CalendarHeader = require('./CalendarHeader');
+var CalendarHead = require('./CalendarHead');
+var CalendarBody = require('./CalendarBody');
 
 var Calendar = React.createClass({
   getInitialState: function(){

@@ -1,5 +1,5 @@
 var React = require('react');
-var BaseComponent = require('../BaseComponent.jsx');
+var BaseComponent = require('../BaseComponent');
 
 class ButtonPanel extends BaseComponent {
     constructor() {

@@ -1,11 +1,11 @@
 var React = require('react');
-var BaseComponent = require('../BaseComponent.jsx');
+var BaseComponent = require('../BaseComponent');
 
 require('./flex.less');
 require('./index.less');
 
-var CalculatorResultPanel = require('./CalculatorResultPanel.jsx');
-var CalculatorButtonPanel = require('./CalculatorButtonPanel.jsx');
+var CalculatorResultPanel = require('./CalculatorResultPanel');
+var CalculatorButtonPanel = require('./CalculatorButtonPanel');
 
 class Calculator extends BaseComponent {
     constructor() {

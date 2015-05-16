@@ -1,6 +1,6 @@
 var React = require('react');
 
-var AsCalculotor = require('../components/AsCalculator/index.jsx');
+var AsCalculotor = require('../components/AsCalculator/index');
 
 React.render(
   <AsCalculotor />,

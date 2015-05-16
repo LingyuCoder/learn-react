@@ -1,6 +1,5 @@
-var React = require('react');
-
-var AsTagField = require('../components/AsTagField/index.jsx');
+import React from 'react';
+import AsTagField from './components/AsTagField/index'
 
 var AsForm = React.createClass({
   handleSubmit: function(){
@@ -10,7 +9,7 @@ var AsForm = React.createClass({
     return (
       <div>
         <div>
-          <AsTagField ref="tags" initTags={['JavaScript', 'CSS', 'HTML']}></AsTagField>
+          <AsTagField ref="tags" initTags={['JavaScript', 'CSS']}></AsTagField>
         </div>
         <div>
           <button className="submit" onClick={this.handleSubmit}>Get Value</button>  

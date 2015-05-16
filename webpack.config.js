@@ -1,34 +1,37 @@
 var webpack = require('webpack');
 var path = require('path');
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
-
 module.exports = {
-    entry: {
-        main: ['webpack/hot/dev-server'],
-        calculator: './entry/calculator.jsx',
-        tagfield: './entry/tagfield.jsx',
-        calendar: './entry/calendar.jsx',
-        checkbox: './entry/checkbox.jsx',
-        mdeditor: './entry/mdeditor.jsx'
-    },
-    output: {
-        path: __dirname,
-        filename: '[name].entry.js'
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader'
-        }, {
-            test: /\.jsx$/,
-            loader: 'babel-loader!jsx-loader'
-        }, {
-            test: /\.less$/,
-            loader: 'style-loader!css-loader!autoprefixer-loader!less-loader'
-        }, {
-            test: /\.css$/,
-            loader: 'style-loader!css-loader!autoprefixer-loader'
-        }]
-    },
-    plugins: [commonsPlugin]
+  devtool: 'eval',
+  entry: {
+    tagfield: [
+      'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
+      'webpack/hot/only-dev-server',
+      './scripts/tagfield'
+    ]
+  },
+  output: {
+    path: path.join(__dirname, 'build'),
+    filename: '[name].entry.js',
+    publicPath: '/scripts/'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  module: {
+    loaders: [{
+      test: /\.js?$/,
+      loaders: ['react-hot', 'babel'],
+      include: [path.join(__dirname, 'scripts')]
+    }, {
+      test: /\.less$/,
+      loader: 'style!css!autoprefixer!less'
+    }, {
+      test: /\.css$/,
+      loader: 'style!css!autoprefixer'
+    }]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ]
 };

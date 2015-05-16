@@ -1,7 +1,7 @@
 var React = require('react');
 
-var AsCheckbox = require('../components/AsCheckbox/checkbox.jsx');
-var AsRadio = require('../components/AsCheckbox/radio.jsx');
+var AsCheckbox = require('../components/AsCheckbox/checkbox');
+var AsRadio = require('../components/AsCheckbox/radio');
 
 React.render(
   <div>
