@@ -4,9 +4,24 @@ module.exports = {
   devtool: 'eval',
   entry: {
     tagfield: [
-      'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
+      'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
       './scripts/tagfield'
+    ],
+    mdeditor: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      './scripts/mdeditor'
+    ],
+    calculator: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      './scripts/calculator'
+    ],
+    checkbox: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      './scripts/checkbox'
     ]
   },
   output: {
@@ -19,7 +34,7 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.js?$/,
+      test: /\.jsx$/,
       loaders: ['react-hot', 'babel'],
       include: [path.join(__dirname, 'scripts')]
     }, {

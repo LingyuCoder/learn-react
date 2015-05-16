@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/LingyuCoder/learn-react",
   "dependencies": {
+    "highlight.js": "^8.5.0",
+    "marked": "^0.3.3",
     "react": "^0.13.3"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "babel-loader": "^5.0.0",
     "css-loader": "^0.12.0",
     "es6-loader": "^0.2.0",
+    "expose-loader": "^0.6.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-less": "^3.0.wl2",
