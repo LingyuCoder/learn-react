@@ -4,24 +4,22 @@ module.exports = {
   devtool: 'eval',
   entry: {
     tagfield: [
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
       './scripts/tagfield'
     ],
+    calendar: [
+      './scripts/calendar'
+    ],
     mdeditor: [
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
       './scripts/mdeditor'
     ],
     calculator: [
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
       './scripts/calculator'
     ],
     checkbox: [
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
       './scripts/checkbox'
+    ],
+    "image-accordion": [
+      './scripts/image-accordion'
     ]
   },
   output: {
@@ -35,7 +33,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.jsx$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: ['babel'],
       include: [path.join(__dirname, 'scripts')]
     }, {
       test: /\.less$/,
@@ -45,8 +43,5 @@ module.exports = {
       loader: 'style!css!autoprefixer'
     }]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ]
+  plugins: []
 };

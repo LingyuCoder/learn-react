@@ -7,7 +7,8 @@
     "example": "examples"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "webpack": "gulp webpack"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var livereload = require('gulp-livereload');
 var webpack = require("gulp-webpack");
-var webpackConfig = require('./webpack.config');
+var webpackConfig = require('./webpack.publish');
 var path = require('path');
 gulp.task("webpack", function() {
   return gulp.src('./').pipe(webpack(webpackConfig)).pipe(gulp.dest('./build'));
