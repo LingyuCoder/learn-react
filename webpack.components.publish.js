@@ -1,28 +1,26 @@
 var webpack = require('webpack');
 var path = require('path');
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 module.exports = {
   entry: {
-    tagfield: [
-      './scripts/tagfield'
+    asTagfield: [
+      './scripts/components/AsTagField/index'
     ],
-    calendar: [
-      './scripts/calendar'
+    asCalculator: [
+      './scripts/components/AsCalculator/index'
     ],
-    mdeditor: [
-      './scripts/mdeditor'
+    asCalendar: [
+      './scripts/components/AsCalendar/index'
     ],
-    calculator: [
-      './scripts/calculator'
+    asMarkdownEditor: [
+      './scripts/components/AsMarkdownEditor/index'
     ],
-    checkbox: [
-      './scripts/checkbox'
-    ],
-    "image-accordion": [
-      './scripts/image-accordion'
+    asImageAccordion: [
+      './scripts/components/AsImageAccordion/index'
     ]
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'build', 'components'),
     filename: '[name].entry.js',
     publicPath: '/scripts/'
   },
@@ -42,5 +40,5 @@ module.exports = {
       loader: 'style!css!autoprefixer'
     }]
   },
-  plugins: []
+  plugins: [commonsPlugin]
 };

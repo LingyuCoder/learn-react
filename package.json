@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "webpack": "gulp webpack"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
