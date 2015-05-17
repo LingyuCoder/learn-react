@@ -35,7 +35,7 @@ webpackJsonp([3],{
 
 	var _SpaceController2 = _interopRequireDefault(_SpaceController);
 
-	__webpack_require__(28);
+	__webpack_require__(26);
 
 	var AsSpace = (function (_React$Component) {
 		function AsSpace(props) {
@@ -397,13 +397,13 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 28:
+/***/ 26:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(29);
+	var content = __webpack_require__(27);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -424,7 +424,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 29:
+/***/ 27:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(42)();

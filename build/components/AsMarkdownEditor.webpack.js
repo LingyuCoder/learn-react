@@ -46,7 +46,7 @@ webpackJsonp([4],[
 
 	var _exposeJQueryLibJQueryJqueryMinJs2 = _interopRequireDefault(_exposeJQueryLibJQueryJqueryMinJs);
 
-	__webpack_require__(26);
+	__webpack_require__(24);
 
 	var MdEditor = (function (_React$Component) {
 	    function MdEditor() {
@@ -198,15 +198,13 @@ webpackJsonp([4],[
 /* 21 */,
 /* 22 */,
 /* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(27);
+	var content = __webpack_require__(25);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(36)(content, {});
@@ -226,13 +224,15 @@ webpackJsonp([4],[
 	}
 
 /***/ },
-/* 27 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(42)();
 	exports.push([module.id, ".as-md-editor {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n}\n.as-md-editor .editor {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 50%;\n}\n.as-md-editor .editor .ace {\n  height: 100%;\n}\n.as-md-editor .editor .ace .ace_layer {\n  /*用于修正ace中文换行时可能出现的叠字情况*/\n  white-space: nowrap !important;\n}\n.as-md-editor .result {\n  position: absolute;\n  top: 0;\n  left: 50%;\n  bottom: 0;\n  right: 0;\n  overflow: auto;\n  padding: 20px;\n}\n", ""]);
 
 /***/ },
+/* 26 */,
+/* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
