@@ -6,16 +6,22 @@ import AsTagField from './components/AsTagField/index';
 class AsForm extends BaseComponent {
   constructor() {
     super();
-    this._bind('handleSubmit', 'render');
+    this.state = {};
   }
-  handleSubmit() {
-    alert(this.refs.tags.getTags().join(','));
+  handleSubmit = () => {
+    alert(this.state.tags.join(','));
   }
-  render() {
+  handleTagChange = (tags) => {
+    this.setState({
+      tags: tags
+    });
+    console.log(tags.join(', '));
+  }
+  render = () => {
     return (
       <div>
         <div>
-          <AsTagField ref="tags" initTags={['JavaScript', 'CSS', 'HTML']}></AsTagField>
+          <AsTagField ref="tags" onChange={this.handleTagChange} initTags={['JavaScript', 'CSS', 'HTML']}></AsTagField>
         </div>
         <div>
           <button className="submit" onClick={this.handleSubmit}>Get value</button>  

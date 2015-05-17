@@ -1,13 +1,11 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 
-export default class ButtonPanel extends BaseComponent {
+export default class ButtonPanel extends React.Component {
     constructor() {
         super();
         this.keyMapping = {};
-        this._bind('onClick', 'componentDidMount', 'render');
     }
-    onClick(event) {
+    onClick = (event) => {
         var target = event.target;
         target.classList.remove('clicked');
         setTimeout(() => {
@@ -15,7 +13,7 @@ export default class ButtonPanel extends BaseComponent {
         }, 0);
         this.props.onClick(target.dataset.value);
     }
-    componentDidMount() {
+    componentDidMount = () => {
         var dom = React.findDOMNode(this);
         var buttons = dom.querySelectorAll('button');
         buttons = [].slice.call(buttons);
@@ -33,7 +31,7 @@ export default class ButtonPanel extends BaseComponent {
             }
         };
     }
-    render() {
+    render = () => {
         return (
             <div className="button-panel row">
                 <div className="s3 column">

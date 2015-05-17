@@ -1,16 +1,14 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 
-export default class Ace extends BaseComponent {
+export default class Ace extends React.Component {
     constructor() {
         super();
-        this._bind('componentDidMount', 'render');
     }
-    componentDidMount() {
-        var editor = ace.edit(React.findDOMNode(this));
-        var maxScrollTop = 0;
+    componentDidMount = () => {
+        let editor = ace.edit(React.findDOMNode(this));
+        let maxScrollTop = 0;
         editor.setTheme('ace/theme/tomorrow');
-        var session = editor.getSession();
+        let session = editor.getSession();
         session.setMode('ace/mode/markdown');
         session.on('change', () => {
             this.props.onChange(editor.getValue());
@@ -20,13 +18,13 @@ export default class Ace extends BaseComponent {
         });
         session.setUseWrapMode(true);
         editor.renderer.on('afterRender', () => {
-            var renderer = editor.renderer;
+            let renderer = editor.renderer;
             maxScrollTop = Math.max(0, renderer.layerConfig.maxHeight - renderer.$size.scrollerHeight + renderer.scrollMargin.bottom);
         });
         editor.container.style.fontSize = '16px';
         editor.setValue(this.props.content);
     }
-    render() {
+    render = () => {
         return (
             <div className="ace"></div>
         );

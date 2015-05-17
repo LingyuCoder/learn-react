@@ -1,21 +1,19 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 import CalculatorResultPanel from './CalculatorResultPanel';
 import CalculatorButtonPanel from './CalculatorButtonPanel';
 
 require('./flex.less');
 require('./index.less');
 
-class Calculator extends BaseComponent {
+export default class Calculator extends React.Component {
     constructor() {
         super();
-        this._bind('onButtonClick', 'render');
         this.state = {
             last: '',
             cur: '0'
         };
     }
-    onButtonClick(type) {
+    onButtonClick = (type) => {
         var cur;
         var lastLetter;
         switch (type) {
@@ -74,7 +72,7 @@ class Calculator extends BaseComponent {
                 break;
         }
     }
-    render() {
+    render = () => {
         var exp = {
             cur: this.state.cur,
             last: this.state.last
@@ -87,5 +85,3 @@ class Calculator extends BaseComponent {
         );
     }
 }
-
-module.exports = Calculator;

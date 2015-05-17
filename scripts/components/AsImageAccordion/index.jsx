@@ -1,17 +1,29 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 
 require('./index.less');
 
-class AsImageAccordion extends BaseComponent {
+class AsImageAccordion extends React.Component {
+  static propTypes = {
+    width: React.PropTypes.oneOfType([
+      React.PropTypes.number,
+      React.PropTypes.string
+    ]),
+    height: React.PropTypes.oneOfType([
+      React.PropTypes.number,
+      React.PropTypes.string
+    ])
+  };
+  static defaultProps = {
+    width: 1080,
+    height: 250
+  };
   constructor() {
     super();
     this.state = {
       hover: null
     };
-    this._bind('render', 'componentDidMount');
   }
-  componentDidMount() {
+  componentDidMount = () => {
     let $dom = React.findDOMNode(this);
     let $wrap = $dom.querySelectorAll('.as-img-acd-wrap');
     $wrap = Array.prototype.slice.call($wrap);
@@ -34,7 +46,7 @@ class AsImageAccordion extends BaseComponent {
     });
 
   }
-  render() {
+  render = () => {
     let children = this.props.children;
     let liStyles = {
       height: this.props.height,
@@ -57,20 +69,27 @@ class AsImageAccordion extends BaseComponent {
   }
 }
 
-class AsImageAccordionItem extends BaseComponent {
+class AsImageAccordionItem extends React.Component {
+  static propTypes = {
+    url: React.PropTypes.string,
+    onClick: React.PropTypes.func
+  };
+  static defaultProps = {
+    url: 'javascript: void(0)',
+    onClick: () => {}
+  };
   constructor() {
     super();
-    this._bind('render');
   }
-  render() {
+  render = () => {
     var styles = {
       backgroundImage: "url(" + this.props.image + ")"
     };
     return (
       <div style={styles} className="as-img-acd-item">
-        <a className="as-img-acd-item-a" href={this.props.url}>
+        <span className="as-img-acd-item-content" onClick={this.props.onClick}>
           {this.props.children}
-        </a>
+        </span>
       </div>
     );
   }

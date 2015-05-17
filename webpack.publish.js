@@ -19,6 +19,9 @@ module.exports = {
     ],
     "image-accordion": [
       './scripts/image-accordion'
+    ],
+    space: [
+      './scripts/space'
     ]
   },
   output: {

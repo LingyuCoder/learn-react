@@ -50,7 +50,7 @@ webpackJsonp([3],[
 
 	var _highlightJs2 = _interopRequireDefault(_highlightJs);
 
-	__webpack_require__(27);
+	__webpack_require__(21);
 
 	var $ = __webpack_require__(14);
 
@@ -270,19 +270,13 @@ webpackJsonp([3],[
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(28);
+	var content = __webpack_require__(22);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(33)(content, {});
@@ -302,13 +296,19 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 28 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(34)();
+	exports = module.exports = __webpack_require__(35)();
 	exports.push([module.id, ".as-md-editor {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n}\n.as-md-editor .editor {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 50%;\n}\n.as-md-editor .editor .ace {\n  height: 100%;\n}\n.as-md-editor .editor .ace .ace_layer {\n  /*用于修正ace中文换行时可能出现的叠字情况*/\n  white-space: nowrap !important;\n}\n.as-md-editor .result {\n  position: absolute;\n  top: 0;\n  left: 50%;\n  bottom: 0;\n  right: 0;\n  overflow: auto;\n  padding: 20px;\n}\n", ""]);
 
 /***/ },
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
 /* 29 */,
 /* 30 */,
 /* 31 */

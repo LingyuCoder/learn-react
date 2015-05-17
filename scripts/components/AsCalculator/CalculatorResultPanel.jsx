@@ -1,5 +1,4 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 
 var replacement = [{
     reg: /\*/g,
@@ -10,12 +9,17 @@ var replacement = [{
 }];
 
 
-export default class ResultPanel extends BaseComponent {
+export default class ResultPanel extends React.Component {
+    static propTypes = {
+        exp: React.PropTypes.string
+    };
+    static defaultProps = {
+        exp: 0
+    };
     constructor() {
         super();
-        this._bind('render');
     }
-    render() {
+    render = () => {
         var exp = this.props.exp;
         var cur, last;
         replacement.forEach((item) => {

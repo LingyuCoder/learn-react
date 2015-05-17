@@ -1,12 +1,10 @@
 import React from 'react';
-import BaseComponent from '../BaseComponent';
 
-export default class AsTag extends BaseComponent {
+export default class AsTag extends React.Component {
 	constructor() {
 		super();
-		this._bind('render');
 	}
-	render(){
+	render = () => {
 		var className = 'as-tag' + (this.props.highlight ? ' as-tag-highlight':'');
 		return (
 			<div className={className}>

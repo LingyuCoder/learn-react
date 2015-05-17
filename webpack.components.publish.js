@@ -3,25 +3,25 @@ var path = require('path');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 module.exports = {
   entry: {
-    asTagfield: [
+    AsTagfield: [
       './scripts/components/AsTagField/index'
     ],
-    asCalculator: [
+    AsCalculator: [
       './scripts/components/AsCalculator/index'
     ],
-    asCalendar: [
+    AsCalendar: [
       './scripts/components/AsCalendar/index'
     ],
-    asMarkdownEditor: [
+    AsMarkdownEditor: [
       './scripts/components/AsMarkdownEditor/index'
     ],
-    asImageAccordion: [
+    AsImageAccordion: [
       './scripts/components/AsImageAccordion/index'
     ]
   },
   output: {
     path: path.join(__dirname, 'build', 'components'),
-    filename: '[name].entry.js',
+    filename: '[name].webpack.js',
     publicPath: '/scripts/'
   },
   resolve: {

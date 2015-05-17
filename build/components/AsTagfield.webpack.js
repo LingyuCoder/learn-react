@@ -1,12 +1,14 @@
-webpackJsonp([4],[
-/* 0 */
+webpackJsonp([2],{
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(1);
 
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35,11 +37,11 @@ webpackJsonp([4],[
 
 	var _BaseComponent3 = _interopRequireDefault(_BaseComponent2);
 
-	var _AsTag = __webpack_require__(8);
+	var _AsTag = __webpack_require__(10);
 
 	var _AsTag2 = _interopRequireDefault(_AsTag);
 
-	__webpack_require__(17);
+	__webpack_require__(29);
 
 	var AsTagField = (function (_BaseComponent) {
 		function AsTagField(props) {
@@ -145,11 +147,8 @@ webpackJsonp([4],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -203,8 +202,8 @@ webpackJsonp([4],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 7 */,
-/* 8 */
+
+/***/ 10:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -262,21 +261,14 @@ webpackJsonp([4],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
+
+/***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(30);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(33)(content, {});
@@ -296,11 +288,13 @@ webpackJsonp([4],[
 	}
 
 /***/ },
-/* 18 */
+
+/***/ 30:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(34)();
+	exports = module.exports = __webpack_require__(35)();
 	exports.push([module.id, ".as-tag {\n  display: block;\n  float: left;\n  padding: 5px 10px;\n  border-radius: 3px;\n  margin: 0 10px 10px 0;\n  background-color: rgba(64, 224, 208, 0.5);\n  color: #666666;\n  cursor: default;\n}\n.as-tag.as-tag-highlight {\n  background-color: rgba(231, 76, 60, 0.5);\n  color: #666666;\n}\n.as-tag:after {\n  content: \"\";\n  clear: both;\n  display: table;\n}\n.as-tagfield {\n  display: inline-block;\n  max-width: 600px;\n  padding: 10px 10px 0;\n  border-radius: 3px;\n  background-color: #ffffff;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);\n  overflow: hidden;\n}\n.as-tagfield .as-tags-input {\n  display: block;\n  float: left;\n  padding: 5px 10px;\n  border: none;\n  line-height: 25px;\n  font-size: 18px;\n  margin-bottom: 10px;\n}\n.as-tagfield .as-tags-input:focus {\n  outline: none;\n}\n", ""]);
 
 /***/ }
-]);
+
+});
