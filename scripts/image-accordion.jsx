@@ -2,9 +2,7 @@ import React from 'react';
 import {
 	AsImageAccordion, 
 	AsImageAccordionItem
-} from 'react-as-image-accordion';
-
-require('../node_modules/react-as-image-accordion/index.less');
+} from './components/AsImageAccordion/index';
 
 let handleClick = (event) => {
 	console.log('clicked', event.target);

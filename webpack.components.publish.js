@@ -17,6 +17,9 @@ module.exports = {
     ],
     AsImageAccordion: [
       './scripts/components/AsImageAccordion/index'
+    ],
+    AsSpace: [
+      './scripts/components/AsSpace/index'
     ]
   },
   output: {

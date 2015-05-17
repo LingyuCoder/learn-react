@@ -22,6 +22,7 @@ export default class SpaceController {
 		this.frames = null;
 		this.currentFrame = 0;
 		this.frameSelector = config.frameSelector || '.as-space-frame';
+		this.animating = false;
 	}
 	addTransitions(customTrans) {
 		for(let name in customTrans){
@@ -98,11 +99,21 @@ export default class SpaceController {
 	}
 	scrollToNextFrame() {
 		let frame = this.frames[this.currentFrame + 1];
-		if(frame) $("html, body").animate({scrollTop: frame.distanceTo + frame.duration / 2}, 1000, 'linear');
+		if(frame && !this.animating) {
+			$("html, body").animate({scrollTop: frame.distanceTo + frame.duration / 2}, 1000, 'linear', () => {
+				this.animating = false;
+			});	
+			this.animating = true;
+		}
 	}
 	scrollToPrevFrame() {
 		let frame = this.frames[this.currentFrame - 1];
-		if(frame) $("html, body").animate({scrollTop: frame.distanceTo + frame.duration / 2}, 1000, 'linear');
+		if(frame && !this.animating) {
+			$("html, body").animate({scrollTop: frame.distanceTo + frame.duration / 2}, 1000, 'linear', () => {
+				this.animating = false;
+			});	
+			this.animating = true;
+		}
 	}
 	init() {
 		const touchScreenCompensation = isMobile() ? 0.3 : 1;

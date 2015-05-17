@@ -15,7 +15,6 @@ export default class ScrollController {
 		this.interval = interv;
 
 		this.$window.on('scroll', () => {
-			console.log(this.$window.scrollTop());
 			(!this.repeatIntervalId) && this.startRepeat();
 		});
 	}

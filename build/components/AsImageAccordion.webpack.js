@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
@@ -19,9 +19,7 @@ webpackJsonp([0],{
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { desc = parent = getter = undefined; _again = false; var object = _x,
-	    property = _x2,
-	    receiver = _x3; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -29,33 +27,22 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-	var _react = __webpack_require__(16);
+	var _react = __webpack_require__(17);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BaseComponent3 = __webpack_require__(6);
+	__webpack_require__(24);
 
-	var _BaseComponent4 = _interopRequireDefault(_BaseComponent3);
-
-	__webpack_require__(27);
-
-	var AsImageAccordion = (function (_BaseComponent) {
+	var AsImageAccordion = (function (_React$Component) {
 	  function AsImageAccordion() {
+	    var _this = this;
+
 	    _classCallCheck(this, AsImageAccordion);
 
 	    _get(Object.getPrototypeOf(AsImageAccordion.prototype), 'constructor', this).call(this);
-	    this.state = {
-	      hover: null
-	    };
-	    this._bind('render', 'componentDidMount');
-	  }
 
-	  _inherits(AsImageAccordion, _BaseComponent);
-
-	  _createClass(AsImageAccordion, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var $dom = _react2['default'].findDOMNode(this);
+	    this.componentDidMount = function () {
+	      var $dom = _react2['default'].findDOMNode(_this);
 	      var $wrap = $dom.querySelectorAll('.as-img-acd-wrap');
 	      $wrap = Array.prototype.slice.call($wrap);
 	      var setWidth = function setWidth(percent, num) {
@@ -75,20 +62,19 @@ webpackJsonp([0],{
 	          setWidth(100, $wrap.length);
 	        }, true);
 	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var children = this.props.children;
+	    };
+
+	    this.render = function () {
+	      var children = _this.props.children;
 	      var liStyles = {
-	        height: this.props.height,
+	        height: _this.props.height,
 	        width: 100 / children.length + '%'
 	      };
 	      var styles = {
-	        width: this.props.width,
-	        height: this.props.height
+	        width: _this.props.width,
+	        height: _this.props.height
 	      };
-	      var $lis = this.props.children.map(function (child) {
+	      var $lis = _this.props.children.map(function (child) {
 	        return _react2['default'].createElement(
 	          'li',
 	          { style: liStyles, className: 'as-img-acd-wrap' },
@@ -104,42 +90,78 @@ webpackJsonp([0],{
 	          $lis
 	        )
 	      );
-	    }
+	    };
+
+	    this.state = {
+	      hover: null
+	    };
+	  }
+
+	  _inherits(AsImageAccordion, _React$Component);
+
+	  _createClass(AsImageAccordion, null, [{
+	    key: 'propTypes',
+	    value: {
+	      width: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.string]),
+	      height: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.string])
+	    },
+	    enumerable: true
+	  }, {
+	    key: 'defaultProps',
+	    value: {
+	      width: 1080,
+	      height: 250
+	    },
+	    enumerable: true
 	  }]);
 
 	  return AsImageAccordion;
-	})(_BaseComponent4['default']);
+	})(_react2['default'].Component);
 
-	var AsImageAccordionItem = (function (_BaseComponent2) {
+	var AsImageAccordionItem = (function (_React$Component2) {
 	  function AsImageAccordionItem() {
+	    var _this2 = this;
+
 	    _classCallCheck(this, AsImageAccordionItem);
 
 	    _get(Object.getPrototypeOf(AsImageAccordionItem.prototype), 'constructor', this).call(this);
-	    this._bind('render');
-	  }
 
-	  _inherits(AsImageAccordionItem, _BaseComponent2);
-
-	  _createClass(AsImageAccordionItem, [{
-	    key: 'render',
-	    value: function render() {
+	    this.render = function () {
 	      var styles = {
-	        backgroundImage: 'url(' + this.props.image + ')'
+	        backgroundImage: 'url(' + _this2.props.image + ')'
 	      };
 	      return _react2['default'].createElement(
 	        'div',
 	        { style: styles, className: 'as-img-acd-item' },
 	        _react2['default'].createElement(
-	          'a',
-	          { className: 'as-img-acd-item-a', href: this.props.url },
-	          this.props.children
+	          'span',
+	          { className: 'as-img-acd-item-content', onClick: _this2.props.onClick },
+	          _this2.props.children
 	        )
 	      );
-	    }
+	    };
+	  }
+
+	  _inherits(AsImageAccordionItem, _React$Component2);
+
+	  _createClass(AsImageAccordionItem, null, [{
+	    key: 'propTypes',
+	    value: {
+	      url: _react2['default'].PropTypes.string,
+	      onClick: _react2['default'].PropTypes.func
+	    },
+	    enumerable: true
+	  }, {
+	    key: 'defaultProps',
+	    value: {
+	      url: 'javascript: void(0)',
+	      onClick: function onClick() {}
+	    },
+	    enumerable: true
 	  }]);
 
 	  return AsImageAccordionItem;
-	})(_BaseComponent4['default']);
+	})(_react2['default'].Component);
 
 	exports['default'] = {
 	  AsImageAccordion: AsImageAccordion,
@@ -149,71 +171,16 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 6:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(16);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var BaseComponent = (function (_React$Component) {
-		function BaseComponent() {
-			_classCallCheck(this, BaseComponent);
-
-			if (_React$Component != null) {
-				_React$Component.apply(this, arguments);
-			}
-		}
-
-		_inherits(BaseComponent, _React$Component);
-
-		_createClass(BaseComponent, [{
-			key: '_bind',
-			value: function _bind() {
-				var _this = this;
-
-				for (var _len = arguments.length, methods = Array(_len), _key = 0; _key < _len; _key++) {
-					methods[_key] = arguments[_key];
-				}
-
-				methods.forEach(function (method) {
-					return _this[method] = _this[method].bind(_this);
-				});
-			}
-		}]);
-
-		return BaseComponent;
-	})(_react2['default'].Component);
-
-	exports['default'] = BaseComponent;
-	module.exports = exports['default'];
-
-/***/ },
-
-/***/ 27:
+/***/ 24:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(28);
+	var content = __webpack_require__(25);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(33)(content, {});
+	var update = __webpack_require__(36)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -231,11 +198,11 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 28:
+/***/ 25:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(35)();
-	exports.push([module.id, ".as-img-acd {\n  width: 100%;\n  overflow: hidden;\n  margin: 50px auto;\n}\n.as-img-acd .as-img-acd-list {\n  width: 100%;\n  display: table;\n  table-layout: fixed;\n  margin: 0;\n  padding: 0;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap {\n  display: table-cell;\n  position: relative;\n  background-repeat: no-repeat;\n  background-position: center center;\n  -webkit-transition: all 500ms ease;\n          transition: all 500ms ease;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap.hover .as-img-acd-item .as-img-acd-item-a {\n  background: rgba(0, 0, 0, 0.4);\n  opacity: 1;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap .as-img-acd-item {\n  display: block;\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap .as-img-acd-item .as-img-acd-item-a {\n  opacity: 0;\n  display: block;\n  height: 100%;\n  width: 100%;\n  position: relative;\n  z-index: 3;\n  padding: 15px 20px;\n  box-sizing: border-box;\n  color: #fff;\n  text-decoration: none;\n  -webkit-transition: all 200ms ease;\n          transition: all 200ms ease;\n}\n", ""]);
+	exports = module.exports = __webpack_require__(42)();
+	exports.push([module.id, ".as-img-acd {\n  width: 100%;\n  overflow: hidden;\n  margin: 50px auto;\n}\n.as-img-acd .as-img-acd-list {\n  width: 100%;\n  display: table;\n  table-layout: fixed;\n  margin: 0;\n  padding: 0;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap {\n  display: table-cell;\n  position: relative;\n  background-repeat: no-repeat;\n  background-position: center center;\n  -webkit-transition: all 500ms ease;\n          transition: all 500ms ease;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap.hover .as-img-acd-item .as-img-acd-item-content {\n  background: rgba(0, 0, 0, 0.4);\n  opacity: 1;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap .as-img-acd-item {\n  display: block;\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.as-img-acd .as-img-acd-list .as-img-acd-wrap .as-img-acd-item .as-img-acd-item-content {\n  opacity: 0;\n  display: block;\n  height: 100%;\n  width: 100%;\n  position: relative;\n  z-index: 3;\n  padding: 15px 20px;\n  box-sizing: border-box;\n  color: #fff;\n  -webkit-transition: all 200ms ease;\n          transition: all 200ms ease;\n  cursor: pointer;\n}\n", ""]);
 
 /***/ }
 
